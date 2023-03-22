@@ -4,7 +4,7 @@ This is a small demo project with Spring to read in and sort graphs. It uses GET
 - Clone the project
 - Execute ./mvnw spring-boot:run in the root directory to build the project
 - Navigate to localhost:8080 via Browser, Postman or whatever tool you fancy
-## Available commands
+## Available Commands
 The following GET and POST endpoints are implemented:
 ### GET
 `/graph` returns the current graph
@@ -21,7 +21,7 @@ The following GET and POST endpoints are implemented:
 
 `/reset` resets the graph to an empty graph
 
-## Further improvements
+## Further Improvements
 The following are example points and functionality that can be added:
 - The `Node` class only offers a `label` but could support arbitrary attributes and methods in principle
 - Graphs do not persist
