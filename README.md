@@ -9,7 +9,7 @@ The following GET and POST endpoints are implemented:
 ### GET
 `/graph` returns the current graph
 
-`/sort` returns a topologically sorted graph (largest-numbered available Vertex first), see [Wikipedia](https://en.wikipedia.org/wiki/Topological_sorting#Depth-first_search)
+`/sort` returns a topologically sorted list of nodes (largest-numbered available Vertex first), see [Wikipedia](https://en.wikipedia.org/wiki/Topological_sorting#Depth-first_search)
 ### POST
 `/add/node` adds a single node
 
@@ -20,6 +20,23 @@ The following GET and POST endpoints are implemented:
 `/add/edges` adds multiple edges `[[e1f,e1t],[e2f,e2t],...]`
 
 `/reset` resets the graph to an empty graph
+
+## Example Use
+Here is an example how to build the graph from [Wiki](https://en.wikipedia.org/wiki/Topological_sorting#Examples) and sort it accordingly:
+- `POST` to localhost:8080/add/nodes `["2","3","9","5","10","7","8","11"]`
+- `POST` to localhost:8080/add/edges `[
+    ["3","8"],
+    ["3","10"],
+    ["5","11"],
+    ["7","8"],
+    ["7","11"],
+    ["8","9"],
+    ["11","2"],
+    ["11","9"],
+    ["11","10"]
+]`
+- `GET` the graph via localhost:8080/graph
+- `GET` the sorted list of nodes via localhost:8080/sort
 
 ## Further Improvements
 The following are example points and functionality that can be added:
